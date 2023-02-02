@@ -20,7 +20,6 @@ public class DirtMount : MonoBehaviour
 
     public void Start()
     {
-        _trailCol.GetComponent<Transform>().position = this.GetComponent<Transform>().position;
         myX = this.GetComponent<Transform>().position.x;
         myY = this.GetComponent<Transform>().position.y;
     }
