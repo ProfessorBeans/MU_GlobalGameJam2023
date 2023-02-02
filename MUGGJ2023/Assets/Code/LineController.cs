@@ -1,33 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LineController : MonoBehaviour
 {
-    public TrailRenderer _line;
+    public TrailRenderer myTrail;
+    public EdgeCollider2D myCollider;
 
-    //Check if a collider exists
-    public void GenerateCollider()
+    public GameObject _colliderHolder;
+
+    private void Start()
     {
-        //Check if collider exists
-        MeshCollider _collider = GetComponent<MeshCollider>();
-        
-        //if no collider, create one
-        if (_collider == null)
-        {
-            _collider = gameObject.AddComponent<MeshCollider>();
-        }
-        
-        //Store the collider
-        Mesh mesh = new Mesh();
-        _line.BakeMesh(mesh, true);
-        _collider.sharedMesh = mesh;
+        myTrail = GetComponent<TrailRenderer>();
     }
-    
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        GenerateCollider();
+        myTrail = this.GetComponent<TrailRenderer>();
+        myCollider = _colliderHolder.GetComponent<EdgeCollider2D>();
+    }
+
+    public void Update()
+    {
+        SetCollider(myTrail, myCollider);
+    }
+
+    public void SetCollider(TrailRenderer trail, EdgeCollider2D collider)
+    {
+        List<Vector2> points = new List<Vector2>();
+        for (int position = 0; position < trail.positionCount; position++)
+        {
+            points.Add(trail.GetPosition(position));
+        }
+        collider.SetPoints(points);
     }
 }

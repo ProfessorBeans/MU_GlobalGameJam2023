@@ -7,6 +7,7 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 public class SnakeMovement : MonoBehaviour
 {
@@ -15,29 +16,15 @@ public class SnakeMovement : MonoBehaviour
     public Transform _trans;
     public float _ySpeed;
     public float _rotateSpeed;
-    public Transform segmentPrefab;
-    
-    //Segments
-    private List<Transform> _segments;
+    public GameObject _dirtMount;
     
     private void Start()
     {
         //Get components
         _rb = GetComponent<Rigidbody2D>();
         _trans = GetComponent<Transform>();
-
-        _segments = new List<Transform>();
-        _segments.Add(this.transform);
     }
 
-    private void Grow()
-    {
-        Transform segment = Instantiate(this.segmentPrefab);
-        segment.position = _segments[_segments.Count - 1].position;
-        
-        _segments.Add(segment);
-    }
-    
     private void Update()
     {
         //Move forward (Down) at a constant Speed
@@ -53,11 +40,15 @@ public class SnakeMovement : MonoBehaviour
         {
             _trans.Rotate(Vector3.forward);
         }
-        
-        //Testing Grow Function
-        if (Input.GetKey(KeyCode.F))
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<EdgeCollider2D>())
         {
-            Grow();
+            print("Hit Tail");
+            _dirtMount.GetComponent<DirtMount>().SnakeReset();
         }
     }
+
 }
