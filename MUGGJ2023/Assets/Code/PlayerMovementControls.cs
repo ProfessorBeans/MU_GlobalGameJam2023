@@ -18,9 +18,7 @@ public class PlayerMovementControls : MonoBehaviour
     public KeyCode keyLeft;
     public KeyCode keyRight;
     public KeyCode keyJump;
-    public KeyCode keyDash;
-    public KeyCode keyTime;
-
+    
     //Player movement speed
     public float speed;
     public float jumpSpeed;

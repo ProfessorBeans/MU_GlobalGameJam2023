@@ -426,13 +426,11 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  keyUp: 273
-  keyDown: 274
-  keyLeft: 276
-  keyRight: 275
+  keyUp: 119
+  keyDown: 115
+  keyLeft: 97
+  keyRight: 100
   keyJump: 32
-  keyDash: 0
-  keyTime: 0
   speed: 30
   jumpSpeed: 3
   isAlive: 1
