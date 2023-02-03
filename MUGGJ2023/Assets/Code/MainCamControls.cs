@@ -17,11 +17,13 @@ public class MainCamControls : MonoBehaviour
     {
         isLookingRoots = true;
         this.GetComponent<Transform>().Translate(0, -6, 0);
+        print("Pan to Roots");
     }
 
     public void PanToSeedBoy()
     {
         isLookingRoots = false;
         this.GetComponent<Transform>().Translate(0, 6, 0);
+        print("Pan to SeedBoy");
     }
 }

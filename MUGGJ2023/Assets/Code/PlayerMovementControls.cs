@@ -234,7 +234,7 @@ public class PlayerMovementControls : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            print("Weezer");
+            print("On Mound");
             canRootSelf = true;
             _mainCam.GetComponent<MainCamControls>().PanToRoots();
         }
@@ -244,7 +244,7 @@ public class PlayerMovementControls : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            print("Weezout");
+            print("Off Mound");
             canRootSelf = false;
             _mainCam.GetComponent<MainCamControls>().PanToSeedBoy();
         }

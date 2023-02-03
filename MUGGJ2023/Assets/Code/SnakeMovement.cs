@@ -30,7 +30,7 @@ public class SnakeMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isActive)
+        if (isActive == true)
         {
             //Move forward (Down) at a constant Speed
             _trans.Translate(0, _ySpeed, 0);
