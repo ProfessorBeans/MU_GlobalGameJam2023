@@ -8,6 +8,7 @@ using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditor.UIElements;
 
 public class SnakeMovement : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class SnakeMovement : MonoBehaviour
         if (isActive == true)
         {
             //Move forward (Down) at a constant Speed
-            _trans.Translate(0, _ySpeed, 0);
+            _trans.Translate(0, _ySpeed * Time.deltaTime, 0);
 
             //Rotate Left/Right
             if (Input.GetKey(KeyCode.A))
