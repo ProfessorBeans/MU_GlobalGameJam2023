@@ -28,7 +28,7 @@ public class SnakeMovement : MonoBehaviour
         isActive = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isActive == true)
         {
