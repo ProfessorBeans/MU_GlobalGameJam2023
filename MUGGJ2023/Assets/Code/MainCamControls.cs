@@ -9,6 +9,8 @@ public class MainCamControls : MonoBehaviour
     //State Tracking
     public bool isLookingRoots;
 
+    public float panDuration;
+
     private void Start()
     {
         isLookingRoots = false;
@@ -32,13 +34,13 @@ public class MainCamControls : MonoBehaviour
     
     IEnumerator PanToRootsCoroutine()
     {
-        Tween panDown = transform.DOMove(transform.position + (new Vector3(0, -6, 0)), 0.2f);
+        Tween panDown = transform.DOMove(transform.position + (new Vector3(0, -6, 0)), panDuration);
         yield return panDown.WaitForCompletion();
     }
     
     IEnumerator PanSeedBoyCoroutine()
     {
-        Tween panUp = transform.DOMove(transform.position + (new Vector3(0, 6, 0)), 0.2f);
+        Tween panUp = transform.DOMove(transform.position + (new Vector3(0, 6, 0)), panDuration);
         yield return panUp.WaitForCompletion();
     }
 }
