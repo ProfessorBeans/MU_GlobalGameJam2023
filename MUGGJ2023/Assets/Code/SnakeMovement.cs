@@ -17,29 +17,43 @@ public class SnakeMovement : MonoBehaviour
     public float _ySpeed;
     public float _rotateSpeed;
     public GameObject _dirtMount;
-    
+    public bool isActive;
+    public GameObject player;
+
     private void Start()
     {
         //Get components
         _rb = GetComponent<Rigidbody2D>();
         _trans = GetComponent<Transform>();
+        isActive = false;
     }
 
     private void Update()
     {
-        //Move forward (Down) at a constant Speed
-        _trans.Translate(0, _ySpeed, 0);
-        
-        //Rotate Left/Right
-        if (Input.GetKey(KeyCode.A))
+        if (isActive)
         {
-            _trans.Rotate(Vector3.back);
-        }
+            //Move forward (Down) at a constant Speed
+            _trans.Translate(0, _ySpeed, 0);
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            _trans.Rotate(Vector3.forward);
+            //Rotate Left/Right
+            if (Input.GetKey(KeyCode.A))
+            {
+                _trans.Rotate(Vector3.back);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                _trans.Rotate(Vector3.forward);
+            }
         }
+        else
+        {
+            if(player.GetComponent<PlayerMovementControls>().isRooted)
+            {
+                isActive = true;
+            }
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

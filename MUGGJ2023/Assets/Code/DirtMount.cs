@@ -27,12 +27,11 @@ public class DirtMount : MonoBehaviour
     public void SnakeReset()
     {
         _snake.position = this.GetComponent<Transform>().position;
+        _snake.rotation = new Quaternion(0, 0, 0, 0);
+        _snake.gameObject.GetComponent<SnakeMovement>().isActive = false;
+        _snake.gameObject.GetComponent<SnakeMovement>().player.GetComponent<PlayerMovementControls>().isRooted = false;
         _trailGen.GetComponent<TrailRenderer>().Clear();
         _trailCol.GetComponent<EdgeCollider2D>().Reset();
     }
 
-    public void Update()
-    {
-        print(this.GetComponent<Transform>().position);
-    }
 }

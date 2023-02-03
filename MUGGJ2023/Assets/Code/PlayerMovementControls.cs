@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementControls : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerMovementControls : MonoBehaviour
     SpriteRenderer playerSprite;
     CapsuleCollider2D cap2D;
 
-    //Layer Mask for ground
+    //Layer Masks for ground & dirt mound
     [SerializeField] public LayerMask groundLayerMask;
 
     //KeyCodes
@@ -18,7 +19,8 @@ public class PlayerMovementControls : MonoBehaviour
     public KeyCode keyLeft;
     public KeyCode keyRight;
     public KeyCode keyJump;
-    
+    public KeyCode keyReset;
+
     //Player movement speed
     public float speed;
     public float jumpSpeed;
@@ -27,13 +29,15 @@ public class PlayerMovementControls : MonoBehaviour
     public bool isAlive;    //Check if the player is still alive
     public int jumpsLeft;   //Checks how many jumps are left
     public bool canRootSelf;    //Check if player can root into ground
+    public bool isRooted;   //Check if player is currently rooted
     public bool isRight;    //Check if player is facing right (flip sprite)
+    public float resetTimer;
 
     //Player Animations
-    public enum PlayerAnimationState {Standing, Walking, Jumping, Falling}
+    public enum PlayerAnimationState { Standing, Walking, Jumping, Falling, Rooted }
     public PlayerAnimationState currentAnimation;
     public Sprite[] playerFrames;
-    int frameTime = 0;
+    public float frameTime = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,9 @@ public class PlayerMovementControls : MonoBehaviour
         _rigidbody2d = GetComponent<Rigidbody2D>();
         cap2D = GetComponent<CapsuleCollider2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+        canRootSelf = false;
+        isRooted = false;
+        resetTimer = 0.0f;
     }
 
     // Update is called once per frame
@@ -48,74 +55,109 @@ public class PlayerMovementControls : MonoBehaviour
     {
         if (isAlive)
         {
-            float usableJumpSpeed;
-            if (IsGrounded())
+            if (!isRooted)
             {
-                jumpsLeft = 1;
-                usableJumpSpeed = jumpSpeed;
 
-                if (_rigidbody2d.velocity.x > 1 || _rigidbody2d.velocity.x < -1)
+                float usableJumpSpeed;
+                if (IsGrounded())
                 {
-                    currentAnimation = PlayerAnimationState.Walking;
+                    jumpsLeft = 1;
+                    usableJumpSpeed = jumpSpeed;
+
+                    if (_rigidbody2d.velocity.x > 1 || _rigidbody2d.velocity.x < -1)
+                    {
+                        currentAnimation = PlayerAnimationState.Walking;
+                    }
+                    else
+                    {
+                        currentAnimation = PlayerAnimationState.Standing;
+                    }
                 }
                 else
                 {
-                    currentAnimation = PlayerAnimationState.Standing;
+                    usableJumpSpeed = 0f;
+                    if (_rigidbody2d.velocity.y > 0)
+                    {
+                        currentAnimation = PlayerAnimationState.Jumping;
+                    }
+                    else
+                    {
+                        currentAnimation = PlayerAnimationState.Falling;
+                    }
                 }
+
+                //Jump
+                if (Input.GetKeyDown(keyJump))
+                {
+                    if (jumpsLeft > 0)
+                    {
+                        float jumpDecrease;
+                        jumpDecrease = 1.5f;
+                        _rigidbody2d.AddForce(Vector2.up * ((jumpSpeed + usableJumpSpeed) / jumpDecrease), ForceMode2D.Impulse);
+                        //_rigidbody2d.gravityScale = 10f;
+                        if (!IsGrounded())
+                        {
+                            jumpsLeft--;
+                        }
+                    }
+                }
+
+                if(canRootSelf)
+                {
+                    if (Input.GetKeyDown(keyDown))
+                    {
+                        isRooted = true;
+                    }
+                }
+
             }
             else
             {
-                usableJumpSpeed = 0f;
-                if (_rigidbody2d.velocity.y > 0)
-                {
-                    currentAnimation = PlayerAnimationState.Jumping;
-                }
-                else
-                {
-                    currentAnimation = PlayerAnimationState.Falling;
-                }
-            }
-
-            //Jump
-            if (Input.GetKeyDown(keyJump))
-            {
-                if (jumpsLeft > 0)
-                {
-                    float jumpDecrease;
-                    jumpDecrease = 1.5f;
-                    _rigidbody2d.AddForce(Vector2.up * ((jumpSpeed + usableJumpSpeed) / jumpDecrease), ForceMode2D.Impulse);
-                    //_rigidbody2d.gravityScale = 10f;
-                    if (!IsGrounded())
-                    {
-                        jumpsLeft--;
-                    }
-                }
+                currentAnimation = PlayerAnimationState.Rooted;
             }
 
             RunAnimations();
+        }
+
+        if(Input.GetKey(keyReset))
+        {
+            resetTimer += Time.deltaTime;
+            if (resetTimer > 3.0f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            
+        }
+        else
+        {
+            resetTimer = 0.0f;
         }
     }
 
     void FixedUpdate()
     {
-        //Move Left
-        if (Input.GetKey(keyLeft))
+        if (!isRooted)
         {
-            _rigidbody2d.AddForce(Vector2.left * speed * Time.deltaTime, ForceMode2D.Impulse);
-            //transform.position -= transform.right * (Time.deltaTime * speed);
+            //Move Left
+            if (Input.GetKey(keyLeft))
+            {
+                _rigidbody2d.AddForce(Vector2.left * speed * Time.deltaTime, ForceMode2D.Impulse);
+                //transform.position -= transform.right * (Time.deltaTime * speed);
 
-            isRight = false;    //Not facing right, so dash will be to the left
-            playerSprite.flipX = true;
-        }
-        //Move Right
-        if (Input.GetKey(keyRight))
-        {
-            _rigidbody2d.AddForce(Vector2.right * speed * Time.deltaTime, ForceMode2D.Impulse);
-            //transform.position += transform.right * (Time.deltaTime * speed);
+                isRight = false;    //Not facing right, so dash will be to the left
+                playerSprite.flipX = true;
+            }
+            //Move Right
+            if (Input.GetKey(keyRight))
+            {
+                _rigidbody2d.AddForce(Vector2.right * speed * Time.deltaTime, ForceMode2D.Impulse);
+                //transform.position += transform.right * (Time.deltaTime * speed);
 
-            isRight = true; //Facing right, so dash will be to the right
-            playerSprite.flipX = false;
+                isRight = true; //Facing right, so dash will be to the right
+                playerSprite.flipX = false;
+            }
         }
+        
     }
 
     private bool IsGrounded()
@@ -141,21 +183,21 @@ public class PlayerMovementControls : MonoBehaviour
 
     private void RunAnimations()
     {
-        int frameLimit;
+        float frameLimit;
         switch (currentAnimation)
         {
             case PlayerAnimationState.Standing:
                 playerSprite.sprite = playerFrames[0];
-                frameTime = 0;
+                frameTime = 0.0f;
                 break;
             case PlayerAnimationState.Walking:
 
                 //frameTime: Tracks each frame of animation
                 //frameLimit: Length of animation in frames
-                frameLimit = 16;
-                if (frameTime > 0)
+                frameLimit = .4f;
+                if (frameTime > 0.0f)
                 {
-                    frameTime--;
+                    frameTime -= Time.deltaTime;
                 }
                 else
                 {
@@ -163,7 +205,7 @@ public class PlayerMovementControls : MonoBehaviour
                 }
 
                 //Plays each frame of animation (Denominator is total number of frames, multiply it by however many frames are left)
-                if (frameTime < (frameLimit/2) * 1)
+                if (frameTime < (frameLimit / 2.0f) * 1.0f)
                 {
                     playerSprite.sprite = playerFrames[2];
                 }
@@ -180,6 +222,29 @@ public class PlayerMovementControls : MonoBehaviour
                 playerSprite.sprite = playerFrames[4];
                 frameTime = 0;
                 break;
+            case PlayerAnimationState.Rooted:
+                playerSprite.sprite = playerFrames[5];
+                frameTime = 0;
+                break;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            print("Weezer");
+            canRootSelf = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            print("Weezout");
+            canRootSelf = false;
+        }
+    }
+
 }
