@@ -9,6 +9,7 @@ public class PlayerMovementControls : MonoBehaviour
     Rigidbody2D _rigidbody2d;
     SpriteRenderer playerSprite;
     CapsuleCollider2D cap2D;
+    public GameObject _mainCam;
 
     //Layer Masks for ground & dirt mound
     [SerializeField] public LayerMask groundLayerMask;
@@ -235,6 +236,7 @@ public class PlayerMovementControls : MonoBehaviour
         {
             print("Weezer");
             canRootSelf = true;
+            _mainCam.GetComponent<MainCamControls>().PanToRoots();
         }
     }
 
@@ -244,6 +246,7 @@ public class PlayerMovementControls : MonoBehaviour
         {
             print("Weezout");
             canRootSelf = false;
+            _mainCam.GetComponent<MainCamControls>().PanToSeedBoy();
         }
     }
 

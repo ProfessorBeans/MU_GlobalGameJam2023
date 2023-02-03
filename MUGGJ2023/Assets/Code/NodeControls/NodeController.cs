@@ -17,11 +17,24 @@ public class NodeController : MonoBehaviour
         isOn = false;
     }
 
+    public void Update()
+    {
+        if (isOn == true)
+        {
+            GetComponent<SpriteResolver>().SetCategoryAndLabel("New Category", "green");
+        }
+
+        if (isOn == false)
+        {
+            GetComponent<SpriteResolver>().SetCategoryAndLabel("New Category", "black");
+        }
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<SnakeMovement>())
         {
-            GetComponent<SpriteResolver>().SetCategoryAndLabel("New Category", "green");
             isOn = true;
         }
     }

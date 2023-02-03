@@ -11,6 +11,7 @@ public class DirtMount : MonoBehaviour
     public Transform _snake;
     public GameObject _trailGen;
     public GameObject _trailCol;
+    public GameObject _nodeHolder;
 
     public float myX;
     public float myY;
@@ -26,6 +27,7 @@ public class DirtMount : MonoBehaviour
 
     public void SnakeReset()
     {
+        _nodeHolder.GetComponent<HolderController>().ResetNodes();
         _snake.position = this.GetComponent<Transform>().position;
         _snake.rotation = new Quaternion(0, 0, 0, 0);
         _snake.gameObject.GetComponent<SnakeMovement>().isActive = false;
