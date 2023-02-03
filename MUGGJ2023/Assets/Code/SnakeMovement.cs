@@ -39,12 +39,12 @@ public class SnakeMovement : MonoBehaviour
             //Rotate Left/Right
             if (Input.GetKey(KeyCode.A))
             {
-                _trans.Rotate(Vector3.back);
+                _trans.Rotate(Vector3.back,45 * _rotateSpeed * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                _trans.Rotate(Vector3.forward);
+                _trans.Rotate(Vector3.forward, 45 * _rotateSpeed * Time.deltaTime);
             }
         }
         else
