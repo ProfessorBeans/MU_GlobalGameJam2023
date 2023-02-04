@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Forest_Level.unity
+    guid: 54917f87147d3fc49a0e1d17608e8555
+  - enabled: 1
+    path: Assets/Scenes/Pond_Level.unity
+    guid: 4f56b71743719ce4f8a4d3f533b97187
+  - enabled: 1
+    path: Assets/Scenes/Lab_Level.unity
+    guid: ecd257c65e9017043a003bed052865f1
   m_configObjects: {}
