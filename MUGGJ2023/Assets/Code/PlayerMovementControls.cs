@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerMovementControls : MonoBehaviour
 {
     //Outlet
@@ -10,6 +11,7 @@ public class PlayerMovementControls : MonoBehaviour
     SpriteRenderer playerSprite;
     CapsuleCollider2D cap2D;
     public GameObject _mainCam;
+    private Scene _scene;
 
     //Layer Masks for ground & dirt mound
     [SerializeField] public LayerMask groundLayerMask;
@@ -238,6 +240,12 @@ public class PlayerMovementControls : MonoBehaviour
             canRootSelf = true;
             _mainCam.GetComponent<MainCamControls>().PanToRoots();
         }
+        if (collision.GetComponent<CapsuleCollider2D>())
+        {
+            print("oh he dead");
+            Scene _scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(_scene.name);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -249,5 +257,4 @@ public class PlayerMovementControls : MonoBehaviour
             _mainCam.GetComponent<MainCamControls>().PanToSeedBoy();
         }
     }
-
 }

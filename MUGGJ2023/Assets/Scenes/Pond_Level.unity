@@ -173,6 +173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vines: {fileID: 735660564}
   _player: {fileID: 1895777962}
+  _lily1: {fileID: 152743769}
+  _lily2: {fileID: 1260111063}
+  _lily3: {fileID: 1869595230}
 --- !u!1 &26269229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3941,6 +3944,8 @@ GameObject:
   m_Component:
   - component: {fileID: 152743770}
   - component: {fileID: 152743771}
+  - component: {fileID: 152743773}
+  - component: {fileID: 152743772}
   m_Layer: 0
   m_Name: LilyPad
   m_TagString: Untagged
@@ -3956,7 +3961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152743769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.43, z: 0}
+  m_LocalPosition: {x: 0.38, y: -0.17, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4004,7 +4009,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10ef04e8cf172524fb3b8ca5d50e8715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d98a71de30607c46aaaa4d7311293e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4015,6 +4020,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &152743772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152743769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 7b60a9e22e8de2d42b97b1b33f82a4df, type: 3}
+--- !u!114 &152743773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152743769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0
+  m_labelHash: 0
+  m_SpriteKey: 0.000011407814
 --- !u!1 &219348691
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,6 +4107,54 @@ Transform:
   m_Father: {fileID: 1219878056}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.94}
+--- !u!1 &367943676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367943678}
+  - component: {fileID: 367943677}
+  m_Layer: 0
+  m_Name: KILLKILLKILL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!70 &367943677
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367943676}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.9103148, y: -6.687361}
+  m_Size: {x: 15.345207, y: 0.8851968}
+  m_Direction: 1
+--- !u!4 &367943678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367943676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6449533, y: 2.52, z: -0.2386913}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &401715873
 GameObject:
   m_ObjectHideFlags: 0
@@ -6187,7 +6269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664966778}
   m_LocalRotation: {x: -0, y: -0, z: -0.7068599, w: 0.7073536}
-  m_LocalPosition: {x: -14.34, y: -7.0051103, z: 1.3192075}
+  m_LocalPosition: {x: -13.57, y: -7, z: 1.3192075}
   m_LocalScale: {x: 0.72, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6661,6 +6743,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1260111064}
   - component: {fileID: 1260111065}
+  - component: {fileID: 1260111067}
+  - component: {fileID: 1260111066}
   m_Layer: 0
   m_Name: LilyPad (1)
   m_TagString: Untagged
@@ -6676,7 +6760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260111063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.65, y: -0.43000007, z: 0}
+  m_LocalPosition: {x: 4.87, y: -0.14, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6724,7 +6808,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10ef04e8cf172524fb3b8ca5d50e8715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d98a71de30607c46aaaa4d7311293e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6735,6 +6819,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1260111066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260111063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0
+  m_labelHash: 0
+  m_SpriteKey: 0.000011407814
+--- !u!114 &1260111067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260111063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 7b60a9e22e8de2d42b97b1b33f82a4df, type: 3}
 --- !u!1 &1275485047
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,11 +6903,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3095668869939835376, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.35
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 3095668869939835376, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.62
+      value: -6.13
       objectReference: {fileID: 0}
     - target: {fileID: 3662963813563091365, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: _player
@@ -6858,19 +6971,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785959285458267180, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.08
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6785959285458267180, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.03
+      value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: 7164214831416954526, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1
+      value: 9.23
       objectReference: {fileID: 0}
     - target: {fileID: 7164214831416954526, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.59
+      value: -5.99
       objectReference: {fileID: 0}
     - target: {fileID: 8509436193313896505, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_Sprite
@@ -7003,7 +7116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656113161}
   m_LocalRotation: {x: -0, y: -0, z: -0.7068599, w: 0.7073536}
-  m_LocalPosition: {x: 4.8019047, y: -6.85511, z: 1.3192075}
+  m_LocalPosition: {x: 4.63, y: -6.86, z: 1.3192075}
   m_LocalScale: {x: 0.69, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7074,6 +7187,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1869595231}
   - component: {fileID: 1869595232}
+  - component: {fileID: 1869595234}
+  - component: {fileID: 1869595233}
   m_Layer: 0
   m_Name: LilyPad (2)
   m_TagString: Untagged
@@ -7089,7 +7204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869595230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.3, y: -0.43000007, z: 0}
+  m_LocalPosition: {x: 9.94, y: -0.01, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7137,7 +7252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10ef04e8cf172524fb3b8ca5d50e8715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d98a71de30607c46aaaa4d7311293e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7148,6 +7263,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1869595233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869595230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 7b60a9e22e8de2d42b97b1b33f82a4df, type: 3}
+--- !u!114 &1869595234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869595230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0
+  m_labelHash: 0
+  m_SpriteKey: 0.000011407814
 --- !u!1 &1895777962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7785105818656082548, guid: 27beaf7ad3ece864c943d5b1b95efafc, type: 3}
