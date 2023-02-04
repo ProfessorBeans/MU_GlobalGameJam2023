@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FishController : MonoBehaviour
 {
@@ -12,15 +13,15 @@ public class FishController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Tests the angle and speeds up fish if it's above 90 degrees
-        if (rotateAngle>= 0.7f)
+        if (rotateAngle >= 0.5f)
         {
             transform.Rotate(new Vector3(0, 0, 10), fishSpeedFast * Time.deltaTime);
             rotateAngle = gameObject.transform.rotation.z;
         }
-        else if(transform.rotation.z <= 0.7f)
+        else if(transform.rotation.z <= 0.5f)
         {
             transform.Rotate(new Vector3(0, 0, 10), fishSpeedSlow * Time.deltaTime);
             rotateAngle = gameObject.transform.rotation.z;
@@ -32,5 +33,5 @@ public class FishController : MonoBehaviour
             rotateAngle *= -1f;
         }
     }
-    
+
 }
