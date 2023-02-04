@@ -28,7 +28,7 @@ public class VineControls : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.S) && this.transform.position.y > 5.5f && _stone.GetComponent<StoneController>().isHeld == false)
             {
-                this.transform.Translate(0, _speed * Time.deltaTime, 0);
+                this.transform.Translate(0, -_speed * Time.deltaTime, 0);
             }
             if (Input.GetKey(KeyCode.W) && this.transform.position.y < 12f)
             {
