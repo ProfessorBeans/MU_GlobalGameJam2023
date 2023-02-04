@@ -47,14 +47,14 @@ public class MainCamControls : MonoBehaviour
     {
         isLookingRoots = true;
         StartCoroutine(PanToRootsCoroutine());
-        print("Pan to Roots");
+        //print("Pan to Roots");
     }
 
     public void PanToSeedBoy()
     {
         isLookingRoots = false;
         StartCoroutine(PanSeedBoyCoroutine());
-        print("Pan to SeedBoy");
+        //print("Pan to SeedBoy");
     }
     
     
