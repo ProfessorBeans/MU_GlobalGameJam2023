@@ -18,7 +18,7 @@ public class VineControls : MonoBehaviour
     void Start()
     {
         _isActive = false;
-        _speed = 10f;
+        _speed = 3f;
     }
 
     // Update is called once per frame
