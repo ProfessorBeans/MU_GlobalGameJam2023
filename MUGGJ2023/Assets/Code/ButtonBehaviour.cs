@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ButtonBehaviour : MonoBehaviour
@@ -9,6 +11,11 @@ public class ButtonBehaviour : MonoBehaviour
     private Color originalColor;
     public float colorDuration = 0.1f;
     private bool isPressed = false;
+    public GameObject _player;
+
+    public GameObject _babyMaker;
+    public GameObject _door;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +24,25 @@ public class ButtonBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isPressed)
+        if (other.GetComponent<BabyController>() && !isPressed)
         {
             isPressed = true;
             spriteRenderer.color = pressedColor;
             Invoke("ResetColor", colorDuration);
         }
     }
-    
+
+    private void Update()
+    {
+        if (isPressed == true)
+        {
+            Destroy(_door);
+            _babyMaker.GetComponent<BabyMakerControls>()._isActive = false;
+            _player.GetComponent<PlayerMovementControls>().enabled = true;
+            _player.GetComponent<PlayerMovementControls>().isRooted = false;
+        }
+    }
+
     private void ResetColor()
     {
         spriteRenderer.color = originalColor;
