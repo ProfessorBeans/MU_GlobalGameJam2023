@@ -11,9 +11,36 @@ public class MainCamControls : MonoBehaviour
 
     public float panDuration;
 
+    //Camera position limits for restricting movement
+    public float camXLimit;
+    public float camUpperYLimit;
+    public float camLowerYLimit;
+
     private void Start()
     {
         isLookingRoots = false;
+
+        //Set cam limit values to prevent it from shifting too far from intended position
+        camXLimit = 6f;
+        camUpperYLimit = 2f;
+        camLowerYLimit = -4f;
+    }
+
+    private void Update()
+    {
+        Vector3 camPos = gameObject.transform.localPosition;
+        if (camPos.x != camXLimit)
+        {
+            gameObject.transform.localPosition = new Vector3(camXLimit, camPos.y, -10);
+        }
+        if (camPos.y > camUpperYLimit)
+        {
+            gameObject.transform.localPosition = new Vector3(camPos.x, camUpperYLimit, -10);
+        }
+        if (camPos.y < camLowerYLimit)
+        {
+            gameObject.transform.localPosition = new Vector3(camPos.x, camLowerYLimit, -10);
+        }
     }
 
     public void PanToRoots()
