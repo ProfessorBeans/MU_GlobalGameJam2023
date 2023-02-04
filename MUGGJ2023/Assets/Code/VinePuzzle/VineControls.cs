@@ -12,11 +12,13 @@ public class VineControls : MonoBehaviour
 
     //State Tracking
     public bool _isActive;
+    public float _speed;
     
     // Start is called before the first frame update
     void Start()
     {
         _isActive = false;
+        _speed = 10f;
     }
 
     // Update is called once per frame
@@ -26,11 +28,11 @@ public class VineControls : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.S) && this.transform.position.y > 5.5f && _stone.GetComponent<StoneController>().isHeld == false)
             {
-                this.transform.Translate(0, -0.0125f, 0);
+                this.transform.Translate(0, _speed * Time.deltaTime, 0);
             }
             if (Input.GetKey(KeyCode.W) && this.transform.position.y < 12f)
             {
-                this.transform.Translate(0, 0.0125f, 0);
+                this.transform.Translate(0, _speed * Time.deltaTime, 0);
             }
 
             if (this.transform.position.y < 6 && this.transform.position.y > 5.5)

@@ -6,9 +6,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
-using System.Collections.Generic;
 using System.Security.Cryptography;
-using UnityEditor.UIElements;
+using UnityEditor;
 
 public class SnakeMovement : MonoBehaviour
 {

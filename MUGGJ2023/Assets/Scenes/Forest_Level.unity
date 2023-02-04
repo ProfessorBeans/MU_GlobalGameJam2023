@@ -6802,6 +6802,10 @@ PrefabInstance:
       propertyPath: _rotateSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
 --- !u!213 &1527188503
