@@ -12,6 +12,8 @@ public class NodeController : MonoBehaviour
     public GameObject snake;
 
     private int randomNode;
+
+    public AudioManager _audioManager;
     
     //Start
     private void Start()
@@ -23,8 +25,6 @@ public class NodeController : MonoBehaviour
     {
         if (isOn == true)
         {
-            
-            
             GetComponent<SpriteResolver>().SetCategoryAndLabel("New Category", "green");
         }
 

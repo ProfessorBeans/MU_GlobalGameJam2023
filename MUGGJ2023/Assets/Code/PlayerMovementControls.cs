@@ -155,8 +155,6 @@ public class PlayerMovementControls : MonoBehaviour
 
                 isRight = false;    //Not facing right, so dash will be to the left
                 playerSprite.flipX = true;
-                
-                _audioManager.playWalking();
             }
             //Move Right
             if (Input.GetKey(keyRight))
@@ -166,8 +164,6 @@ public class PlayerMovementControls : MonoBehaviour
 
                 isRight = true; //Facing right, so dash will be to the right
                 playerSprite.flipX = false;
-                
-                _audioManager.playWalking();
             }
         }
         
