@@ -72,7 +72,7 @@ public class SnakeMovement : MonoBehaviour
         if (other.GetComponent<CircleCollider2D>() && other.gameObject.layer != 7)
         {
             _audioManager.playNode();
-            print("play");
+            //print("play");
         }
     }
 

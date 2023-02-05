@@ -7387,7 +7387,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2955486915479168096, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3095668869939835376, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7397,6 +7397,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -6.13
       objectReference: {fileID: 0}
+    - target: {fileID: 3474281788215067362, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: _audioManager
+      value: 
+      objectReference: {fileID: 1123259349}
     - target: {fileID: 3662963813563091365, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: _player
       value: 
@@ -7459,7 +7463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296998655872178072, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6785959285458267180, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7479,8 +7483,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7401094522503309732, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8275576762308848556, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: _audioManager
+      value: 
+      objectReference: {fileID: 1123259349}
+    - target: {fileID: 8310449220860919106, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: _audioManager
+      value: 
+      objectReference: {fileID: 1123259349}
     - target: {fileID: 8509436193313896505, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_Sprite
       value: 
