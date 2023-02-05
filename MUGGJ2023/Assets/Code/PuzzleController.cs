@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.U2D.Animation;
 using UnityEngine.UIElements;
 
@@ -38,6 +39,11 @@ public class PuzzleController : MonoBehaviour
 
             _vines.GetComponent<BabyMakerControls>()._isActive = true;
         }
-        
+
+        if (_vines.GetComponent<Animator>())
+        {
+            print("ok");
+            SceneManager.LoadScene("Final cutscenes");
+        }
     }
 }
