@@ -13,6 +13,8 @@ public class PlayerMovementControls : MonoBehaviour
     public GameObject _mainCam;
     private Scene _scene;
 
+    public AudioManager _audioManager;
+
     //Layer Masks for ground & dirt mound
     [SerializeField] public LayerMask groundLayerMask;
 
@@ -92,6 +94,8 @@ public class PlayerMovementControls : MonoBehaviour
                 //Jump
                 if (Input.GetKeyDown(keyJump))
                 {
+                    _audioManager.playJumpVoice();
+                    
                     if (jumpsLeft > 0)
                     {
                         float jumpDecrease;
@@ -110,6 +114,8 @@ public class PlayerMovementControls : MonoBehaviour
                     if (Input.GetKeyDown(keyDown))
                     {
                         isRooted = true;
+                        
+                        _audioManager.playMoundVoice();
                     }
                 }
 
@@ -244,6 +250,7 @@ public class PlayerMovementControls : MonoBehaviour
         if (collision.GetComponent<CapsuleCollider2D>())
         {
             print("oh he dead");
+            _audioManager.playDieVoice();
             Scene _scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(_scene.name);
         }
