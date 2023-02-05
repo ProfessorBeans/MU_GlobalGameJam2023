@@ -10,5 +10,6 @@ public class LevelExitTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene(nextScene);
+        print("ay big boy");
     }
 }

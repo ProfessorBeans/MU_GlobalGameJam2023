@@ -15,6 +15,7 @@ public class ButtonBehaviour : MonoBehaviour
 
     public GameObject _babyMaker;
     public GameObject _door;
+    public GameObject _door2;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class ButtonBehaviour : MonoBehaviour
         if (isPressed == true)
         {
             Destroy(_door);
+            Destroy(_door2);
             _babyMaker.GetComponent<BabyMakerControls>()._isActive = false;
             _player.GetComponent<PlayerMovementControls>().enabled = true;
             _player.GetComponent<PlayerMovementControls>().isRooted = false;

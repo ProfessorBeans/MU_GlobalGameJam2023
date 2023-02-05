@@ -39,7 +39,6 @@ public class PuzzleController : MonoBehaviour
         if (_vines.GetComponent<Rigidbody2D>())
         {
             print("BabyMakerFound");
-
             _vines.GetComponent<BabyMakerControls>()._isActive = true;
         }
 

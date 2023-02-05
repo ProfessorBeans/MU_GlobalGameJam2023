@@ -28,7 +28,7 @@ public class VineControls : MonoBehaviour
     {
         if (_isActive == true)
         {
-            if (Input.GetKey(KeyCode.S) && this.transform.position.y > 5.5f && _stone.GetComponent<StoneController>().isHeld == false)
+            if (Input.GetKey(KeyCode.S) && this.transform.position.y > 4.5f && _stone.GetComponent<StoneController>().isHeld == false)
             {
                 this.transform.Translate(0, -_speed * Time.deltaTime, 0);
                 
@@ -41,7 +41,7 @@ public class VineControls : MonoBehaviour
                 _audioManager.playVines();
             }
 
-            if (this.transform.position.y < 6 && this.transform.position.y > 5.5)
+            if (this.transform.position.y < 5 && this.transform.position.y > 4.5)
             {
                 print("Between 6 and 5.5");
                 _stone.GetComponent<StoneController>().isHeld = true;
