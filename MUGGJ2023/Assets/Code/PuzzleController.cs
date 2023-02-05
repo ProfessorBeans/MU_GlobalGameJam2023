@@ -10,6 +10,7 @@ public class PuzzleController : MonoBehaviour
     public GameObject _vines;
     public GameObject _player;
 
+    public GameObject fish;
     public GameObject _lily1;
     public GameObject _lily2;
     public GameObject _lily3;
@@ -30,6 +31,8 @@ public class PuzzleController : MonoBehaviour
             _lily3.GetComponent<SpriteResolver>().SetCategoryAndLabel("lily", "Entry_0");
             _player.GetComponent<PlayerMovementControls>().enabled = true;
             _player.GetComponent<PlayerMovementControls>().isRooted = false;
+
+            fish.GetComponent<FishController>().enabled = false;
         }
 
         if (_vines.GetComponent<Rigidbody2D>())

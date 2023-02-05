@@ -6782,6 +6782,34 @@ PrefabInstance:
       propertyPath: _audioManager
       value: 
       objectReference: {fileID: 1867321842}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.4117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.4117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.5176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 8509436194077198994, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.69803923
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
 --- !u!213 &1527188503
