@@ -15,8 +15,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip voice_mound;
     
     //Other sound effects
-    public AudioClip walking;
     public AudioClip vines;
+    
+    public AudioClip node1;
+    public AudioClip node2;
+    public AudioClip node3;
     
     
     // Start is called before the first frame update
@@ -52,18 +55,31 @@ public class AudioManager : MonoBehaviour
         
         _audioSource.Play();
     }
-
-    public void playWalking()
-    {
-        _audioSource.clip = walking;
-        
-        _audioSource.Play();
-    }
     
     public void playVines()
     {
         _audioSource.clip = vines;
         
+        _audioSource.Play();
+    }
+    
+    public void playNode()
+    {
+        int randomNumber = UnityEngine.Random.Range(1, 4);
+
+        if (randomNumber == 1)
+        {
+            _audioSource.clip = node1;
+        }
+        else if (randomNumber == 2)
+        {
+            _audioSource.clip = node2;
+        }
+        else
+        {
+            _audioSource.clip = node3;
+        }
+
         _audioSource.Play();
     }
 }
