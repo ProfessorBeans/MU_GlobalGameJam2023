@@ -20,6 +20,8 @@ public class SnakeMovement : MonoBehaviour
     public bool isActive;
     public GameObject player;
 
+    public AudioManager _audioManager;
+    
     private void Start()
     {
         //Get components
@@ -60,7 +62,10 @@ public class SnakeMovement : MonoBehaviour
     {
         if (other.GetComponent<EdgeCollider2D>())
         {
-            print("Hit Tail");
+            //print("Hit Tail");
+            
+            _audioManager.playLoseVoice();
+                
             _dirtMount.GetComponent<DirtMount>().SnakeReset();
         }
     }
