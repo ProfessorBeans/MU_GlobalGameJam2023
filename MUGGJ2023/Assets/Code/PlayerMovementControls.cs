@@ -236,10 +236,11 @@ public class PlayerMovementControls : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            print("On Mound");
+            //print("On Mound");
             canRootSelf = true;
             _mainCam.GetComponent<MainCamControls>().PanToRoots();
         }
+        
         if (collision.GetComponent<CapsuleCollider2D>())
         {
             print("oh he dead");
@@ -252,7 +253,7 @@ public class PlayerMovementControls : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            print("Off Mound");
+            //print("Off Mound");
             canRootSelf = false;
             _mainCam.GetComponent<MainCamControls>().PanToSeedBoy();
         }

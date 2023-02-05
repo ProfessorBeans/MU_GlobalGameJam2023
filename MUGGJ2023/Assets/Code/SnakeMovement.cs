@@ -60,7 +60,7 @@ public class SnakeMovement : MonoBehaviour
     {
         if (other.GetComponent<EdgeCollider2D>())
         {
-            print("Hit Tail");
+            //print("Hit Tail");
             _dirtMount.GetComponent<DirtMount>().SnakeReset();
         }
     }
