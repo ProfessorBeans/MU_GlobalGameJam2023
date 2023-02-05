@@ -63,6 +63,8 @@ public class SnakeMovement : MonoBehaviour
         if (other.GetComponent<EdgeCollider2D>())
         {
             //print("Hit Tail");
+            
+            _audioManager.playLoseVoice();
             _dirtMount.GetComponent<DirtMount>().SnakeReset();
         }
         

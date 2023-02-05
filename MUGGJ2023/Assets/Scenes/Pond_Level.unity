@@ -6143,6 +6143,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: node1
+      value: 
+      objectReference: {fileID: 8300000, guid: 07297311d50773b46b1eee058ec8643a, type: 3}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: node2
+      value: 
+      objectReference: {fileID: 8300000, guid: 31f54a85eb351ff4ea8ffe38d4a3241c, type: 3}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: node3
+      value: 
+      objectReference: {fileID: 8300000, guid: ad01d756176386a4fab268995fe9635a, type: 3}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: vines
+      value: 
+      objectReference: {fileID: 8300000, guid: c9665a4150798af4f81eb2551b7c5f55, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
 --- !u!1 &433531685
@@ -7369,6 +7385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2955486915479168096, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3095668869939835376, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.52
@@ -7437,6 +7457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mound_ORIGIN
       objectReference: {fileID: 0}
+    - target: {fileID: 6296998655872178072, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6785959285458267180, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -7452,6 +7476,10 @@ PrefabInstance:
     - target: {fileID: 7164214831416954526, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_LocalPosition.y
       value: -5.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401094522503309732, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8509436193313896505, guid: a1f415dc07cf8ac4ab1fd31df8f03322, type: 3}
       propertyPath: m_Sprite
