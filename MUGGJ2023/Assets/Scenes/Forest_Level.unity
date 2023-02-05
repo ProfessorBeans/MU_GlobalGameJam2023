@@ -6440,7 +6440,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da3fc0ad4273b41418b7d6db04714298, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.553
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7819,6 +7819,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1895777962}
+    - target: {fileID: 2963692497148180937, guid: de1514190e1ab674bbc33f4d7ee9f687, type: 3}
+      propertyPath: _audioManager
+      value: 
+      objectReference: {fileID: 1867321842}
     - target: {fileID: 2963692497844955037, guid: de1514190e1ab674bbc33f4d7ee9f687, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7924,6 +7928,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: roots
+      value: 
+      objectReference: {fileID: 8300000, guid: 1bbdf31852342ef48b00ce42e6aee094, type: 3}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: vines
+      value: 
+      objectReference: {fileID: 8300000, guid: c9665a4150798af4f81eb2551b7c5f55, type: 3}
+    - target: {fileID: 3581311499324869011, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 8300000, guid: 30411b0c10c90f94dad017029d784d10, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09ee99b3201b4d40a93f69d1c692585, type: 3}
 --- !u!1001 &7652717695377832003
