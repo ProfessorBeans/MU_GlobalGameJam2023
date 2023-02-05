@@ -14,6 +14,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip voice_lose_puzzle;
     public AudioClip voice_mound;
     
+    //Other sound effects
+    public AudioClip walking;
+    public AudioClip vines;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,20 @@ public class AudioManager : MonoBehaviour
     public void playMoundVoice()
     {
         _audioSource.clip = voice_mound;
+        
+        _audioSource.Play();
+    }
+
+    public void playWalking()
+    {
+        _audioSource.clip = walking;
+        
+        _audioSource.Play();
+    }
+    
+    public void playVines()
+    {
+        _audioSource.clip = vines;
         
         _audioSource.Play();
     }

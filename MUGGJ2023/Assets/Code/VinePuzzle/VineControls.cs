@@ -10,6 +10,8 @@ public class VineControls : MonoBehaviour
     public GameObject _player; //PLAYER MUST BE SET PER PUZZLE PER SCENE
     public GameObject _stone;
 
+    public AudioManager _audioManager;
+
     //State Tracking
     public bool _isActive;
     public float _speed;
@@ -29,10 +31,14 @@ public class VineControls : MonoBehaviour
             if (Input.GetKey(KeyCode.S) && this.transform.position.y > 5.5f && _stone.GetComponent<StoneController>().isHeld == false)
             {
                 this.transform.Translate(0, -_speed * Time.deltaTime, 0);
+                
+                _audioManager.playVines();
             }
             if (Input.GetKey(KeyCode.W) && this.transform.position.y < 12f)
             {
                 this.transform.Translate(0, _speed * Time.deltaTime, 0);
+                
+                _audioManager.playVines();
             }
 
             if (this.transform.position.y < 6 && this.transform.position.y > 5.5)

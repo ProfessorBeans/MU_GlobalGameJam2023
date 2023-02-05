@@ -10,6 +10,8 @@ public class NodeController : MonoBehaviour
     //State Tracking
     public bool isOn;
     public GameObject snake;
+
+    private int randomNode;
     
     //Start
     private void Start()
@@ -21,6 +23,8 @@ public class NodeController : MonoBehaviour
     {
         if (isOn == true)
         {
+            
+            
             GetComponent<SpriteResolver>().SetCategoryAndLabel("New Category", "green");
         }
 

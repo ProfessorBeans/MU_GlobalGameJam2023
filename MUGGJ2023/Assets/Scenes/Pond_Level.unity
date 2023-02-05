@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vines: {fileID: 735660564}
   _player: {fileID: 1895777962}
+  fish: {fileID: 779804704}
   _lily1: {fileID: 152743769}
   _lily2: {fileID: 1260111063}
   _lily3: {fileID: 1869595230}
@@ -6646,6 +6647,11 @@ Transform:
   m_Father: {fileID: 24755601}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &779804704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 657012477419552138, guid: c46d65e04ae59d1478fe491aed9404d1, type: 3}
+  m_PrefabInstance: {fileID: 510737980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &888919896
 GameObject:
   m_ObjectHideFlags: 0

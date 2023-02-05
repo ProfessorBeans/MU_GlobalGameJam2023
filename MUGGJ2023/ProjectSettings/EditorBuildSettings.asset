@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab_Level.unity
     guid: ecd257c65e9017043a003bed052865f1
+  - enabled: 1
+    path: Assets/Scenes/Final cutscenes.unity
+    guid: cc780b5f48450435a9b34cf4f88fdbc8
+  - enabled: 1
+    path: Assets/Scenes/Title_Screen.unity
+    guid: d8eaa523244f43f43a761567b7e68e57
+  - enabled: 1
+    path: Assets/Scenes/Scene_04.unity
+    guid: 30f47f941fd20431b9789420e32f3f8d
   m_configObjects: {}
